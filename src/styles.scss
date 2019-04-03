@@ -1,0 +1,42 @@
+
+// @import './colors.scss';
+
+// .App {
+//   font-family: sans-serif;
+//   text-align: center;
+// }
+
+// .btn{
+//   min-width: 100px;
+//   padding: 5px;
+//   cursor: pointer;
+//   color: #ffff; 
+//   transition-delay: 0.2s;
+//   border-radius: 4px;
+
+//   &-primary{
+//     background-color: $primary;
+//     border: 1px solid $primary-darker;
+//     &:hover{
+//       background-color: $primary-darker;
+//     }
+//   }
+//   &-danger{
+//     background-color: $danger;
+//     border: 1px solid $danger-darker;
+//     &:hover{
+//       background-color: $danger-darker;
+//     }
+//   }
+//   &-success{
+//     background-color: $success;
+//     border: 1px solid $success-darker;
+//     &:hover{
+//       background-color: $success-darker;
+//     }
+//   }
+// }
+.count-input {
+  text-align: center;
+  width: 50px;
+}
