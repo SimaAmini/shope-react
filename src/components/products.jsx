@@ -11,27 +11,20 @@ class Products extends Component {
     console.log(products);
     this.setState({ products: products.data });
   }
+
   render() {
     const { products } = this.state;
+    const { onAdd } = this.props;
     return (
       <div className="row">
         {products.map(product => (
           <Product
             key={product.id}
-            title={product.title}
-            thumbnailUrl={product.thumbnailUrl}
+            addToCart={onAdd}
+            product={product}
           />
         ))}
       </div>
-      // {products.map(product => (
-      //   <Product
-      //     onDelete={this.props.onDelete}
-      //     onIncrement={this.props.onIncrement}
-      //     onDecrement={this.props.onDecrement}
-      //     key={counter.id}
-      //     counter={counter}
-      //   />
-      // ))}
     );
   }
 }

@@ -5,15 +5,10 @@ class Counter extends Component {
     count: 0
   };
   increment = () => {
-    let count = this.state.count;
-
-    ++count;
-    this.setState({ count });
+    this.setState({ count: this.state.count + 1 });
   };
   decrement = () => {
-    let count = this.state.count;
-    --count;
-    this.setState({ count });
+    this.setState({ count: this.state.count - 1 });
   };
   handleChangeCounter = event => {
     this.setState({ count: event.target.value });

@@ -1,18 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+import App from "./App";
+import "bootstrap/dist/css/bootstrap.css";
 
-// import bootstrap from "bootstrap"; // eslint-disable-line no-unused-vars
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "./styles.scss";
-import Products from "./components/products";
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById("root")
+);
 
-function App() {
-  return (
-    <div className="App">
-      <Products />
-    </div>
-  );
-}
-
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
