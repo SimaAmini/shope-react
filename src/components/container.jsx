@@ -3,6 +3,7 @@ import Navbar from "./navbar";
 import Products from "./products";
 import NotFound from "./notFound";
 import ProductDetail from "./productDetail";
+import Cart from "./cart";
 import { Redirect, Route, Switch } from "react-router-dom";
 class Container extends Component {
   state = { total: 0 };
@@ -11,9 +12,10 @@ class Container extends Component {
     this.setState({ total: this.state.total + 1 });
   };
   render() {
+    const { total } = this.state;
     return (
       <React.Fragment>
-        <Navbar total={this.state.total} />
+        <Navbar total={total} />
         <main className="container">
           <Switch>
             <Route path="/products/:id" component={ProductDetail} />
@@ -21,6 +23,7 @@ class Container extends Component {
               path="/products"
               render={() => <Products onAdd={this.handleAddToCart} />}
             />
+            <Route path="/cart" render={() => <Cart total={total} />} />
             <Redirect exact from="/" to="/products" />
             <Route path="/not-found" component={NotFound} />
             <Redirect to="/not-found" />
