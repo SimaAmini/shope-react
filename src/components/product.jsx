@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 class Product extends Component {
   state = {};
   render() {
-    const { product, addToCart } = this.props;
+    const { product } = this.props;
     return (
       <React.Fragment>
         <div className="card col-sm-4">
@@ -21,9 +21,7 @@ class Product extends Component {
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </p>
-            <button className="btn btn-primary" onClick={addToCart}>
-              +
-            </button>
+
             <button>{product.price}</button>
           </div>
         </div>

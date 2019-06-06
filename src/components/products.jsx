@@ -8,7 +8,6 @@ class Products extends Component {
   };
   async componentDidMount() {
     const products = await getProducts();
-    console.log(products);
     this.setState({ products: products.data });
   }
 
@@ -18,11 +17,7 @@ class Products extends Component {
     return (
       <div className="row">
         {products.map(product => (
-          <Product
-            key={product.id}
-            addToCart={onAdd}
-            product={product}
-          />
+          <Product key={product.id} addToCart={onAdd} product={product} />
         ))}
       </div>
     );
