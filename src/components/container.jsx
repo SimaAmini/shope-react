@@ -5,14 +5,24 @@ import NotFound from "./notFound";
 import ProductDetail from "./productDetail";
 import Cart from "./cart";
 import { Redirect, Route, Switch } from "react-router-dom";
+import "../index.css";
+
 class Container extends Component {
   state = { total: 0, products: [] };
+
+  componentDidMount() {
+    const cartItams = JSON.parse(localStorage.getItem("cartItems"));
+    console.log(cartItams);
+    if (cartItams && cartItams.length > 0) {
+      this.setState({ total: cartItams.length });
+    }
+  }
 
   handleAddToCart = product => {
     const products = [...this.state.products];
     products.push(product);
+    localStorage.setItem("cartItems", JSON.stringify(products));
     this.setState({ total: this.state.total + 1, products: products });
-    // localStorage.setItem("cartItems", JSON.stringify(this.state.products));
   };
   handleRemoveProduct = product => {
     const products = [...this.state.products];
@@ -25,7 +35,7 @@ class Container extends Component {
     return (
       <React.Fragment>
         <Navbar total={total} />
-        <main className="container">
+        <main className="container mx-auto px-40">
           <Switch>
             <Route
               path="/products/:id"

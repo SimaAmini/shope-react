@@ -1,4 +1,3 @@
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 

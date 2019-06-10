@@ -1,27 +1,27 @@
 import React, { Component } from "react";
 class Cart extends Component {
-  // async componentDidMount() {
-  //   try {
-  //     cartItams = localStorage.getItem
-  //     const { data: product } = await getProduct(productId);
-  //     this.setState({ product });
-  //   } catch (ex) {
-  //     if (ex.response && ex.response.status === 404)
-  //       return this.props.history.replace("/not-found");
-  //   }
-  // }
+  state = {
+    products: []
+  };
+  async componentDidMount() {
+    const products = JSON.parse(localStorage.getItem("cartItems"));
+    if (products && products.length > 0) {
+      this.setState({ products });
+    }
+  }
   render() {
-    const { products } = this.props;
+    const { products } = this.state;
 
     return (
       <React.Fragment>
         <p>cart{this.props.total}</p>
         <table className="table">
           <tbody>
-            {products.map(product => (
+            {this.state.products.map(product => (
               <tr key={product.id}>
                 <td>
                   <img
+                    style={{ width: "100px" }}
                     className="img-thumbnail"
                     src={product.thumbnailUrl}
                     alt={product.title}

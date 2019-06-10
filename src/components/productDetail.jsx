@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { getProduct } from "../services/productService";
-
+import "../index.css";
 class ProductDetail extends Component {
   state = {
     product: {
@@ -44,7 +44,7 @@ class ProductDetail extends Component {
             </span>
           ))}
           <button
-            className="btn btn-primary"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
             onClick={() => this.props.onAdd(product)}
           >
             + Add to Cart

@@ -15,7 +15,7 @@ class Products extends Component {
     const { products } = this.state;
     const { onAdd } = this.props;
     return (
-      <div className="row">
+      <div className="flex">
         {products.map(product => (
           <Product key={product.id} addToCart={onAdd} product={product} />
         ))}
